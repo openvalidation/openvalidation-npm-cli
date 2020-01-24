@@ -1,0 +1,29 @@
+{
+  "name": "openvalidation",
+  "version": "0.0.1",
+  "description": "script-package for openvalidation",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openvalidation/openvalidation-npm-cli.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "prepare": "npm run clean && npm run build"
+  },
+  "author": "openvalidation",
+  "license": "MIT",
+  "bin": {
+    "openvalidation": "./dist/cli.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-java-connector": "^0.1.2",
+    "typescript": "^3.7.4"
+  },
+  "devDependencies": {
+    "@types/node": "^13.1.6",
+    "rimraf": "^3.0.0"
+  }
+}
