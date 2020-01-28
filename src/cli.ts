@@ -8,7 +8,7 @@ const [, , ...args] = process.argv;
 // TODO: Load JAR dynamically from maven-package
 var runOpenvalidation = async function() {
   var relativePath = path.join(
-    path.join(__dirname),
+    path.dirname(__filename),
     "../java/openvalidation.jar"
   );
 
