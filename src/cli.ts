@@ -1,18 +1,8 @@
 #!/usr/bin/env node
 
-import { executeJar } from "node-java-connector";
-import * as path  from "path";
+import { runOpenvalidation } from "./openvalidation-launcher";
 
-const [, , ...args] = process.argv;
-
-// TODO: Load JAR dynamically from maven-package
-var runOpenvalidation = async function() {
-  var relativePath = path.join(
-    path.dirname(__filename),
-    "../java/openvalidation.jar"
-  );
-
-  var output = await executeJar(relativePath, args);
+runOpenvalidation().then(output => {
   if (!!output.stderr) {
     output.stderr.on("data", (stderr: any) => {
       console.error(`${stderr}`);
@@ -23,6 +13,4 @@ var runOpenvalidation = async function() {
       console.log(`${stderr}`);
     });
   }
-};
-
-runOpenvalidation();
+})

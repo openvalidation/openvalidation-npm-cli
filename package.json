@@ -17,7 +17,8 @@
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
-    "prepare": "npm run clean && npm run build"
+    "prepare": "npm run clean && npm run build",
+    "test": "jest"
   },
   "author": "openvalidation",
   "license": "MIT",
@@ -25,12 +26,14 @@
     "openvalidation": "./dist/cli.js"
   },
   "dependencies": {
-    "express": "^4.17.1",
     "node-java-connector": "^0.1.2",
     "typescript": "^3.7.4"
   },
   "devDependencies": {
+    "@types/jest": "^25.1.1",
     "@types/node": "^13.1.6",
-    "rimraf": "^3.0.0"
+    "jest": "^25.1.0",
+    "rimraf": "^3.0.0",
+    "ts-jest": "^25.1.0"
   }
 }
